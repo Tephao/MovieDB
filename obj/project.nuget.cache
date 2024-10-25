@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3hWFSjgHrDQ=",
+  "dgSpecHash": "bkYKFM5mD80=",
   "success": true,
-  "projectFilePath": "C:\\Users\\puc\\source\\repos\\movieDB\\MovieDB\\moviedb.csproj",
+  "projectFilePath": "C:\\Users\\puc\\source\\repos\\MovieDB\\moviedb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\puc\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\puc\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

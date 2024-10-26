@@ -21,7 +21,7 @@ namespace moviedb.Infra
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string conexao = "server=localhost; port=3306; database=moviedb; user=root; password=";
+                string conexao = "Server=localhost; Database=moviedb; User=root;Password=";
                 optionsBuilder.UseMySql(conexao, ServerVersion.AutoDetect(conexao));
             }
         }
@@ -30,6 +30,9 @@ namespace moviedb.Infra
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Filme>(entity =>
             {
+                entity.ToTable("Filmes");
+                entity.Property(e => e.DiretorId);
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nome);
                 entity.Property(e => e.Genero);
                 entity.Property(e => e.Descricao);
@@ -39,6 +42,7 @@ namespace moviedb.Infra
 
             modelBuilder.Entity<Serie>(entity =>
             {
+                entity.ToTable("Series");
                 entity.Property(e => e.Nome);
                 entity.Property(e => e.Genero);
                 entity.Property(e => e.Descricao);
@@ -50,6 +54,8 @@ namespace moviedb.Infra
 
             modelBuilder.Entity<Ator>(entity =>
             {
+                entity.ToTable("Atores");
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nome);
                 entity.Property(e => e.Nacionalidade);
                 entity.Property(e => e.DataDeNascimento);

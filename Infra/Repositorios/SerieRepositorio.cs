@@ -5,13 +5,17 @@ namespace moviedb.Infra.Repositorios
     public class SerieRepositorio
     {
         public List<Serie> Series { get; set; }
-        public SerieRepositorio()
+        public DbContexto DbContexto { get; set; }
+        public SerieRepositorio(DbContexto dbContexto)
         {
             this.Series = new List<Serie>();
+            DbContexto = dbContexto;
         }
         public void Criar(Serie serie)
         {
             this.Series.Add(serie);
+            this.DbContexto.Series.Add(serie);
+            this.DbContexto.SaveChanges();
         }
 
         public List<Serie> BuscarTodosSeries()

@@ -5,13 +5,18 @@ namespace moviedb.Infra.Repositorios
     public class FilmeRepositorio
     {
         public List<Filme> Filmes { get; set; }
-        public FilmeRepositorio()
+
+        public DbContexto DbContexto { get; set; }
+        public FilmeRepositorio(DbContexto dbContexto)
         {
             this.Filmes = new List<Filme>();
+            DbContexto = dbContexto;
         }
         public void Criar(Filme filme)
         {
             this.Filmes.Add(filme);
+            this.DbContexto.Filmes.Add(filme);
+            this.DbContexto.SaveChanges();
         }
 
         public List<Filme> BuscarTodosFilmes()

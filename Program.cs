@@ -16,6 +16,7 @@ builder.Services.AddDbContext<DbContexto>(options  =>
 builder.Services.AddScoped<FilmeRepositorio>();
 builder.Services.AddScoped<AtorRepositorio>();
 builder.Services.AddScoped<SerieRepositorio>();
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
